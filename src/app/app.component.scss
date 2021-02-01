@@ -1,0 +1,17 @@
+@import '../assets/stylesheets/colors';
+
+.app-container {
+  height: 100%;
+
+  .app-mat-toolbar {
+    background: $primary-blue;
+
+    a {
+      color: white;
+    }
+  }
+}
+
+.menu-spacer {
+  flex: 1 1 auto;
+}
