@@ -9,7 +9,6 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatButtonModule} from '@angular/material/button';
-import {FlexLayoutModule} from '@angular/flex-layout';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
@@ -17,6 +16,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { Tama38Component } from './pages/tama38/tama38.component';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -39,7 +39,6 @@ export function createTranslateLoader(http: HttpClient) {
     MatListModule,
     MatIconModule,
     MatButtonModule,
-    FlexLayoutModule,
     HttpClientModule,
     TranslateModule.forRoot({
       defaultLanguage: 'he',
@@ -48,7 +47,8 @@ export function createTranslateLoader(http: HttpClient) {
         useFactory: (createTranslateLoader),
         deps: [HttpClient]
       }
-    })
+    }),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

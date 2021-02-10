@@ -24,7 +24,7 @@
             <!-- The following menu items will be hidden on both SM and XS screen sizes -->
             <a [routerLink]="'home'" mat-list-item >{{ 'SECTIONS.HOME' | translate }}</a>
             <a [routerLink]="'about'" mat-list-item>{{ 'SECTIONS.ABOUT' | translate }}</a>
-            <a href="#" mat-list-item>{{ 'SECTIONS.BUSINESS_FIELDS.TITLE' | translate }}</a>
+            <a [routerLink]="'/tama'" mat-list-item>{{ 'SECTIONS.BUSINESS_FIELDS.TITLE' | translate }}</a>
             <a href="#" mat-list-item>{{ 'SECTIONS.ARTICLES' | translate }}</a>
             <a href="#" mat-list-item>{{ 'SECTIONS.CONTACT' | translate }}</a>
           </div>
@@ -42,7 +42,7 @@
         <a (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
         <a [routerLink]="'home'" mat-list-item >{{ 'SECTIONS.HOME' | translate }}</a>
         <a [routerLink]="'about'" mat-list-item>{{ 'SECTIONS.ABOUT' | translate }}</a>
-        <a href="#" mat-list-item>{{ 'SECTIONS.BUSINESS_FIELDS.TITLE' | translate }}</a>
+        <a [routerLink]="'tama'" mat-list-item>{{ 'SECTIONS.BUSINESS_FIELDS.TITLE' | translate }}</a>
         <a href="#" mat-list-item>{{ 'SECTIONS.ARTICLES' | translate }}</a>
         <a href="#" mat-list-item>{{ 'SECTIONS.CONTACT' | translate }}</a>
       </mat-nav-list>

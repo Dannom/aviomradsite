@@ -16,7 +16,7 @@ $header-footer-padding-mobile: 16px;
     }
 
     .info-header {
-      background: $primary-blue;
+      background: $primary;
       height: 50px;
       color: white;
       display: flex;
@@ -35,7 +35,7 @@ $header-footer-padding-mobile: 16px;
     .menu-header {
       mat-toolbar-row {
         background: white;
-        color: $primary-blue;
+        color: $primary;
         display: flex;
         justify-content: space-between;
         padding: 0;
@@ -50,7 +50,7 @@ $header-footer-padding-mobile: 16px;
           a {
             display: flex;
             align-items: center;
-            color: $primary-blue;
+            color: $primary;
             text-decoration: none;
             padding: 16px 12px;
             font-size: 16px;
@@ -82,7 +82,7 @@ $header-footer-padding-mobile: 16px;
   }
 
   .footer-wrapper {
-    background: $primary-blue;
+    background: $primary;
     box-sizing: border-box;
 
     .upper-footer {

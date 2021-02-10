@@ -1,0 +1,51 @@
+@import '../../../assets/stylesheets/colors';
+
+.form-control {
+  color: $primary;
+  margin-bottom: 16px;
+
+  input, textarea {
+    height: 48px;
+    padding: 16px;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid $primary;
+    //box-shadow: 0 0 8px $light-primary;
+
+    &:focus {
+      outline: none;
+      border: 1px solid $gold;
+      box-shadow: 0 0 8px $gold;
+    }
+  }
+
+  textarea  {
+    height: 96px;
+  }
+
+  label {
+    margin-bottom: 8px;
+    display: inline-block;
+  }
+}
+
+.form-button {
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $primary;
+  color: white;
+  border-radius: 5px;
+  width: 160px;
+  margin: auto;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    box-shadow: 0 0 8px $light-primary;
+  }
+}

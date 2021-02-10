@@ -1,1 +1,18 @@
-<p>contact-form works!</p>
+<div class="container">
+      <form [formGroup]="formData" (ngSubmit)="onSubmit(formData.value)">
+      <div class="form-control">
+        <label for="fullName">{{ 'CONTACT_FORM.NAME.LABEL' | translate }}</label>
+        <input id="fullName" type="text" [placeholder]="'CONTACT_FORM.NAME.PLACEHOLDER' | translate" formControlName="fullName">
+      </div>
+        <div class="form-control">
+          <label for="phone">{{ 'CONTACT_FORM.PHONE.LABEL' | translate }}</label>
+          <input id="phone" type="tel" [placeholder]="'CONTACT_FORM.PHONE.PLACEHOLDER' | translate" formControlName="phone">
+        </div>
+        <div class="form-control">
+          <label for="content">{{ 'CONTACT_FORM.CONTENT.LABEL' | translate }}</label>
+          <textarea id="content" type="text" [placeholder]="'CONTACT_FORM.CONTENT.PLACEHOLDER' | translate" formControlName="content">
+          </textarea>
+        </div>
+        <button class="form-button" type="submit" [disabled]="!formData.valid">{{ 'CONTACT_FORM.SEND_BTN' | translate }}</button>
+      </form>
+</div>

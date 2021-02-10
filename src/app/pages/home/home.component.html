@@ -1,7 +1,7 @@
 <div class="upper-background">
   <div class="opacity"></div>
   <div class="slogan">
-    "Strong title slogan"
+    {{ 'PAGES.HOME.SLOGAN' | translate }}
   </div>
 </div>
 
@@ -56,4 +56,10 @@
     </div>
   </section>
 
+  <section>
+    <h3 class="title">
+      {{ 'SECTIONS.BUSINESS_FIELDS.TITLE' | translate }}
+    </h3>
+    <app-contact-form></app-contact-form>
+  </section>
 </div>
