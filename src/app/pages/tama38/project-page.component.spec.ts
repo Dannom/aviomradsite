@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Tama38Component } from './tama38.component';
+import { ProjectPageComponent } from './project-page.component';
 
-describe('Tama38Component', () => {
-  let component: Tama38Component;
-  let fixture: ComponentFixture<Tama38Component>;
+describe('ProjectPageComponent', () => {
+  let component: ProjectPageComponent;
+  let fixture: ComponentFixture<ProjectPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ Tama38Component ]
+      declarations: [ ProjectPageComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(Tama38Component);
+    fixture = TestBed.createComponent(ProjectPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

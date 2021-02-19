@@ -14,9 +14,10 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
-import { Tama38Component } from './pages/tama38/tama38.component';
+import { ProjectPageComponent } from './pages/tama38/project-page.component';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { ProjectComponent } from './components/project/project.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -27,8 +28,9 @@ export function createTranslateLoader(http: HttpClient) {
     AppComponent,
     HomeComponent,
     AboutComponent,
-    Tama38Component,
-    ContactFormComponent
+    ProjectPageComponent,
+    ContactFormComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,

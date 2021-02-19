@@ -1,0 +1,28 @@
+<div class="page-content">
+
+  <section>
+    <h3 class="title">
+      {{ 'PAGES.PROJECTS.TITLE' | translate }}
+    </h3>
+
+    <div class="projects-list">
+      <app-project [address]="'PAGES.PROJECTS.PROJECT1.ADDRESS' | translate"
+                   imgPath="../../../assets/images/olei-hagardom63.jpeg"
+                   [duration]="'PAGES.PROJECTS.PROJECT1.DURATION' | translate"
+                   [yearFinish]="'PAGES.PROJECTS.PROJECT1.YEAR_FINISH' | translate">
+      </app-project>
+
+      <app-project [address]="'PAGES.PROJECTS.PROJECT2.ADDRESS' | translate"
+                   imgPath="../../../assets/images/meonot2-4.jpeg"
+                   [duration]="'PAGES.PROJECTS.PROJECT2.DURATION' | translate"
+                   [yearFinish]="'PAGES.PROJECTS.PROJECT2.YEAR_FINISH' | translate">
+      </app-project>
+
+      <app-project [address]="'PAGES.PROJECTS.PROJECT3.ADDRESS' | translate"
+                   imgPath="../../../assets/images/yosef-halevi.jpeg"
+                   [duration]="'PAGES.PROJECTS.PROJECT3.DURATION' | translate"
+                   [yearFinish]="'PAGES.PROJECTS.PROJECT3.YEAR_FINISH' | translate">
+      </app-project>
+    </div>
+  </section>
+</div>
