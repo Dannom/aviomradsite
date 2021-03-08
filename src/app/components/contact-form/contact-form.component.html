@@ -1,18 +1,35 @@
-<div class="container">
-      <form [formGroup]="formData" (ngSubmit)="onSubmit(formData.value)">
-      <div class="form-control">
-        <label for="fullName">{{ 'CONTACT_FORM.NAME.LABEL' | translate }}</label>
-        <input id="fullName" type="text" [placeholder]="'CONTACT_FORM.NAME.PLACEHOLDER' | translate" formControlName="fullName">
-      </div>
-        <div class="form-control">
-          <label for="phone">{{ 'CONTACT_FORM.PHONE.LABEL' | translate }}</label>
-          <input id="phone" type="tel" [placeholder]="'CONTACT_FORM.PHONE.PLACEHOLDER' | translate" formControlName="phone">
-        </div>
-        <div class="form-control">
-          <label for="content">{{ 'CONTACT_FORM.CONTENT.LABEL' | translate }}</label>
-          <textarea id="content" type="text" [placeholder]="'CONTACT_FORM.CONTENT.PLACEHOLDER' | translate" formControlName="content">
-          </textarea>
-        </div>
-        <button class="form-button" type="submit" [disabled]="!formData.valid">{{ 'CONTACT_FORM.SEND_BTN' | translate }}</button>
-      </form>
+<div class="wrapper" [ngClass]="{'load-start': loadStart, 'load-complete': loadComplete}">
+  <div class="loader-wrapper">
+    <div class="circle-loader">
+      <div class="checkmark draw"></div>
+    </div>
+    <p>פנייתך התקבלה! תודה רבה</p>
+  </div>
+  <form [formGroup]="formData" (ngSubmit)="onSubmit(formData.value)">
+    <h3 class="title">
+      {{ 'PAGES.HOME.CONTACT_TITLE' | translate }}
+    </h3>
+    <div class="form-control">
+    <label for="fullName">{{ 'CONTACT_FORM.NAME.LABEL' | translate }}</label>
+    <input id="fullName" type="text" [placeholder]="'CONTACT_FORM.NAME.PLACEHOLDER' | translate" formControlName="fullName">
+  </div>
+    <div class="form-control">
+      <label for="phone">{{ 'CONTACT_FORM.PHONE.LABEL' | translate }}</label>
+      <input id="phone" type="tel" [placeholder]="'CONTACT_FORM.PHONE.PLACEHOLDER' | translate" formControlName="phone">
+    </div>
+    <div class="form-control">
+      <label for="content">{{ 'CONTACT_FORM.CONTENT.LABEL' | translate }}</label>
+      <textarea id="content" type="text" [placeholder]="'CONTACT_FORM.CONTENT.PLACEHOLDER' | translate" formControlName="content">
+      </textarea>
+    </div>
+    <button class="form-button" type="submit" [disabled]="formData.valid">{{ 'CONTACT_FORM.SEND_BTN' | translate }}</button>
+  </form>
+
+  <div class="map-wrapper">
+    <agm-map [zoom]="16" [latitude]="lat" [longitude]="lng">
+      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+    </agm-map>
+    <img src="../../../assets/images/beser4.jpg" alt="">
+  </div>
+
 </div>

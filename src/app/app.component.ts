@@ -13,4 +13,9 @@ export class AppComponent {
     translate.setDefaultLang('he');
     translate.use('he');
   }
+
+  scrollTo(elId: string): void {
+    const el: HTMLElement = document.getElementById(elId);
+    el.scrollIntoView();
+  }
 }

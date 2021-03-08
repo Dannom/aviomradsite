@@ -22,21 +22,21 @@
     <div class="field-cards-wrapper">
       <div class="field-card">
         <i class="icon-building"></i>
-        <p class="field-card-title">{{ 'PAGES.HOME.BUSINESS_FIELDS.FIELDS.REAL_ESTATE_LAW' | translate }}</p>
+        <span class="field-card-title">{{ 'PAGES.HOME.BUSINESS_FIELDS.FIELDS.REAL_ESTATE_LAW' | translate }}</span>
         <!--<p class="field-card-summary"></p>-->
       </div>
       <!--<div class="separator"></div>-->
 
       <div class="field-card">
         <i class="icon-building"></i>
-        <p class="field-card-title">{{ 'PAGES.HOME.BUSINESS_FIELDS.FIELDS.TAMA' | translate }}</p>
+        <span class="field-card-title">{{ 'PAGES.HOME.BUSINESS_FIELDS.FIELDS.TAMA' | translate }}</span>
         <!--<p class="field-card-summary"></p>-->
       </div>
       <!--<div class="separator"></div>-->
 
       <div class="field-card">
         <i class="icon-building"></i>
-        <p class="field-card-title">{{ 'PAGES.HOME.BUSINESS_FIELDS.FIELDS.REAL_ESTATE_TAX' | translate }}</p>
+        <span class="field-card-title">{{ 'PAGES.HOME.BUSINESS_FIELDS.FIELDS.REAL_ESTATE_TAX' | translate }}</span>
         <!--<p class="field-card-summary"></p>-->
       </div>
 
@@ -44,22 +44,26 @@
 
       <div class="field-card">
         <i class="icon-building"></i>
-        <p class="field-card-title">{{ 'PAGES.HOME.BUSINESS_FIELDS.FIELDS.COMMERCIAL' | translate }}</p>
+        <span class="field-card-title">{{ 'PAGES.HOME.BUSINESS_FIELDS.FIELDS.COMMERCIAL' | translate }}</span>
         <!--<p class="field-card-summary"></p>-->
       </div>
 
       <div class="field-card">
         <i class="icon-building"></i>
-        <p class="field-card-title">{{ 'PAGES.HOME.BUSINESS_FIELDS.FIELDS.CONSTRUCTION' | translate }}</p>
+        <span class="field-card-title">{{ 'PAGES.HOME.BUSINESS_FIELDS.FIELDS.CONSTRUCTION' | translate }}</span>
         <!--<p class="field-card-summary"></p>-->
       </div>
     </div>
   </section>
 
-  <section>
+  <section class="illustration-video">
     <h3 class="title">
-      {{ 'MENU.CONTACT' | translate }}
+      {{ 'PAGES.HOME.CONTACT_TITLE' | translate }}
     </h3>
-    <app-contact-form></app-contact-form>
+    <video width="100%" controls type="video/mp4" src="../../../assets/videos/illustration.mp4"></video>
+  </section>
+
+  <section id="contact-section" [ngClass]="{'fixed': isPositionFixed && !hasReachedFooter, 'fixed-bottom' : hasReachedFooter}">
+    <app-contact-form (messageSent)="hasReachedFooter  = false; isPositionFixed = false;"></app-contact-form>
   </section>
 </div>

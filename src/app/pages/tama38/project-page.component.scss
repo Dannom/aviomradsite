@@ -1,10 +1,19 @@
 .projects-list {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
 
-  .project {
-    margin-bottom: 70px;
+  app-project {
+    grid-column: 2/4;
   }
+
+
+  //app-project:nth-child(odd) {
+  //  grid-column: 2/4;
+  //}
+  //
+  //app-project:nth-child(even) {
+  //  grid-column: 2/4;
+  //}
 }
 

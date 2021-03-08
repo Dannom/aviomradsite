@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {ContactService} from '../../services/contact.service';
 
@@ -9,9 +9,13 @@ import {ContactService} from '../../services/contact.service';
 })
 export class ContactFormComponent implements OnInit {
   formData: FormGroup;
+  lat = 32.093652;
+  lng = 34.824427;
+  loadStart: boolean;
+  loadComplete: boolean;
+  @Output() messageSent: EventEmitter<void> = new EventEmitter<void>();
 
-
-  constructor(private formBuilder: FormBuilder, private contactService: ContactService) { }
+  constructor(private formBuilder: FormBuilder, private contactService: ContactService, private el: ElementRef) { }
 
   ngOnInit() {
     this.formData = this.formBuilder.group({
@@ -23,15 +27,21 @@ export class ContactFormComponent implements OnInit {
   }
 
   onSubmit(FormData) {
-    console.log(FormData)
-    this.contactService.postMessage(FormData)
-      .subscribe(response => {
-        // location.href = 'https://mailthis.to/confirm';
-        console.log(response);
-      }, error => {
-        console.warn(error.responseText)
-        console.log({error})
-      })
+    this.loadStart = true;
+    setTimeout(() => {
+      this.loadComplete = true;
+      this.messageSent.emit();
+    }, 1000)
+    // this.contactService.postMessage(FormData)
+    //   .subscribe(response => {
+    //     // location.href = 'https://mailthis.to/confirm';
+    //     if (response) {
+    //       this.showConfirm = true;
+    //     }
+    //   }, error => {
+    //     console.warn(error.responseText)
+    //     console.log({error})
+    //   })
   }
 }
 

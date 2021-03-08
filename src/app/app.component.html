@@ -26,7 +26,7 @@
             <a [routerLink]="'about'" mat-list-item>{{ 'MENU.ABOUT' | translate }}</a>
             <a [routerLink]="'projects'" mat-list-item>{{ 'MENU.PROJECTS' | translate }}</a>
             <a href="#" mat-list-item>{{ 'MENU.ARTICLES' | translate }}</a>
-            <a href="#" mat-list-item>{{ 'MENU.CONTACT' | translate }}</a>
+            <a (click)="scrollTo('contact-section')" mat-list-item>{{ 'MENU.CONTACT' | translate }}</a>
           </div>
           <i class="icon-full-logo"></i>
           <i class="icon-logo"></i>
@@ -44,7 +44,7 @@
         <a [routerLink]="'about'" mat-list-item>{{ 'MENU.ABOUT' | translate }}</a>
         <a [routerLink]="'projects'" mat-list-item>{{ 'MENU.PROJECTS' | translate }}</a>
         <a href="#" mat-list-item>{{ 'MENU.ARTICLES' | translate }}</a>
-        <a href="#" mat-list-item>{{ 'MENU.CONTACT' | translate }}</a>
+        <a href="#contact-section" mat-list-item>{{ 'MENU.CONTACT' | translate }}</a>
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>

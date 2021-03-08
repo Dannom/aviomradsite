@@ -1,51 +1,214 @@
 @import '../../../assets/stylesheets/colors';
 
-.form-control {
-  color: $primary;
-  margin-bottom: 16px;
+$brand-success: #5cb85c;
+$loader-size: 7em;
+$check-height: $loader-size/2;
+$check-width: $check-height/2;
+$check-left: ($loader-size/6 + $loader-size/12);
+$check-thickness: 3px;
+$check-color: $brand-success;
 
-  input, textarea {
-    height: 48px;
-    padding: 16px;
-    box-sizing: border-box;
-    width: 100%;
-    border-radius: 5px;
-    border: 1px solid $primary;
-    //box-shadow: 0 0 8px $light-primary;
+.wrapper {
+  display: flex;
+  justify-content: space-between;
 
-    &:focus {
-      outline: none;
-      border: 1px solid $gold;
-      box-shadow: 0 0 8px $gold;
+  form {
+    opacity: 1;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    h3.title {
+      margin-top: 0;
+    }
+
+    .form-control {
+      color: $primary;
+      margin-bottom: 16px;
+
+      input, textarea {
+        height: 48px;
+        padding: 16px;
+        box-sizing: border-box;
+        width: 100%;
+        border-radius: 5px;
+        border: 1px solid $primary;
+        //box-shadow: 0 0 8px $light-primary;
+
+        &:focus {
+          outline: none;
+          border: 1px solid $gold;
+          box-shadow: 0 0 8px $gold;
+        }
+      }
+
+      textarea  {
+        height: 96px;
+        resize: none;
+      }
+
+      label {
+        margin-bottom: 8px;
+        display: inline-block;
+      }
+    }
+
+    .form-button {
+      height: 48px;
+      display: flex;
+      font-size: 20px;
+      justify-content: center;
+      align-items: center;
+      background: $primary;
+      color: white;
+      border-radius: 5px;
+      width: 160px;
+      margin: 0 auto;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:active {
+        box-shadow: 0 0 8px $light-primary;
+      }
     }
   }
 
-  textarea  {
-    height: 96px;
+  .loader-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      display: none;
+      font-size: 18px;
+      color: $check-color;
+    }
   }
 
-  label {
-    margin-bottom: 8px;
-    display: inline-block;
+  .circle-loader {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-left-color: $check-color;
+    animation: loader-spin 1.2s infinite linear;
+    position: relative;
+    display: none;
+    vertical-align: top;
+    border-radius: 50%;
+    width: $loader-size;
+    height: $loader-size;
+  }
+
+  &.load-start {
+    form {
+      opacity: 0;
+      //transition: all ease-in 0.5s;
+    }
+
+    .loader-wrapper {
+      display: flex;
+    }
+
+    .circle-loader {
+      display: block;
+    }
+  }
+
+  &.load-complete {
+    .loader-wrapper {
+      p {
+        display: block;
+      }
+    }
+
+    .circle-loader {
+      -webkit-animation: none;
+      animation: none;
+      border-color: $check-color;
+      transition: border 500ms ease-out;
+
+      .checkmark {
+        display: block;
+
+        &.draw:after {
+          animation-duration: 800ms;
+          animation-timing-function: ease;
+          animation-name: checkmark;
+          transform: scaleX(-1) rotate(135deg);
+        }
+
+        &:after {
+          opacity: 1;
+          height: $check-height;
+          width: $check-width;
+          transform-origin: left top;
+          border-right: $check-thickness solid $check-color;
+          border-top: $check-thickness solid $check-color;
+          content: '';
+          left: $check-left;
+          top: $check-height;
+          position: absolute;
+        }
+      }
+    }
+  }
+
+
+
+  .map-wrapper {
+    display: none;
+    height: 400px;
+    width: 400px;
+    direction: ltr;
+
+    img {
+      height: 50%;
+      width: 100%;
+    }
+
+    agm-map {
+      height: 50%;
+      width: 100%;
+    }
+
   }
 }
 
-.form-button {
-  height: 48px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: $primary;
-  color: white;
-  border-radius: 5px;
-  width: 160px;
-  margin: auto;
-
-  &:hover {
-    cursor: pointer;
+@keyframes loader-spin {
+  0% {
+    transform: rotate(0deg);
   }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
-  &:active {
-    box-shadow: 0 0 8px $light-primary;
+@keyframes checkmark {
+  0% {
+    height: 0;
+    width: 0;
+    opacity: 1;
+  }
+  20% {
+    height: 0;
+    width: $check-width;
+    opacity: 1;
+  }
+  40% {
+    height: $check-height;
+    width: $check-width;
+    opacity: 1;
+  }
+  100% {
+    height: $check-height;
+    width: $check-width;
+    opacity: 1;
   }
 }

@@ -18,6 +18,7 @@ import { ProjectPageComponent } from './pages/tama38/project-page.component';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { ProjectComponent } from './components/project/project.component';
+import {AgmCoreModule} from '@agm/core';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -50,7 +51,10 @@ export function createTranslateLoader(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCaQ6L9UqRDTY-lq1XN5MMw03gBdg_8-vI'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
